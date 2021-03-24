@@ -20,4 +20,10 @@ interface DailyForecastApi {
     fun forecastByCityObservable(@Query("lat") latitude: String,
                                  @Query("lon") longitude: String): Observable<Forecast>
 
+    @GET("onecall?appid=3266efaedce0bdae97f925cfc7f971b2&exclude=current,minutely,hourly,alerts&units=imperial")
+    suspend fun forecastByCityCoroutine(@Query("lat") latitude: String,
+                                 @Query("lon") longitude: String): Forecast
+
+
+
 }
