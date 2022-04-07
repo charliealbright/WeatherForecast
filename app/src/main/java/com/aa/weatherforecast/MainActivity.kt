@@ -4,15 +4,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.aa.weatherforecast.api.DailyForecastApi
-import com.aa.weatherforecast.api.entity.Location
 import com.aa.weatherforecast.databinding.ActivityMainBinding
 import com.aa.weatherforecast.network.NetworkService
 
 class MainActivity : AppCompatActivity() {
-
-
-    val networkService = NetworkService()
-    val retrofit = networkService.getRetrofitInstance()
+    
+    private val networkService = NetworkService()
+    private val retrofit = networkService.getRetrofitInstance()
 
     lateinit var dailyForecastApi: DailyForecastApi
     lateinit var binding: ActivityMainBinding
