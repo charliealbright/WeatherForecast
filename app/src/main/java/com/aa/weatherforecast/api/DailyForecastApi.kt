@@ -12,14 +12,17 @@ import retrofit2.http.Query
  */
 interface DailyForecastApi {
 
+    // Retrofit Call
     @GET("onecall?appid=3266efaedce0bdae97f925cfc7f971b2&exclude=current,minutely,hourly,alerts&units=imperial")
     fun forecastByCity(@Query("lat") latitude: String,
                        @Query("lon") longitude: String): Call<Forecast>
 
+    // RxJava Observable
     @GET("onecall?appid=3266efaedce0bdae97f925cfc7f971b2&exclude=current,minutely,hourly,alerts&units=imperial")
     fun forecastByCityObservable(@Query("lat") latitude: String,
                                  @Query("lon") longitude: String): Observable<Forecast>
 
+    // Coroutine
     @GET("onecall?appid=3266efaedce0bdae97f925cfc7f971b2&exclude=current,minutely,hourly,alerts&units=imperial")
     suspend fun forecastByCityCoroutine(@Query("lat") latitude: String,
                                  @Query("lon") longitude: String): Forecast
